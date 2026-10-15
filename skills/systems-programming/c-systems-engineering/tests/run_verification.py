@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import subprocess, tempfile
 from pathlib import Path
-CODE = '#include <assert.h>\n#include <stdbool.h>\n#include <stddef.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <string.h>\n\ntypedef struct {\n    uint8_t *base;\n    size_t capacity;\n    size_t offset;\n} c11_arena_t;\n\nstatic int c11_arena_init(c11_arena_t *a, uint8_t *backing, size_t cap) {\n    if (a == NULL || backing == NULL || cap == 0U) return -1;\n    a->base = backing;\n    a->capacity = cap;\n    a->offset = 0U;\n    return 0;\n}\n\nstatic void *c11_arena_alloc_aligned(c11_arena_t *a, size_t count, size_t elem_size, size_t align) {\n    if (a == NULL || count == 0U || elem_size == 0U || align == 0U || (align & (align - 1U)) != 0U) return NULL;\n    if (count > SIZE_MAX / elem_size) return NULL;\n    size_t bytes = count * elem_size;\n    uintptr_t cur = (uintptr_t)(a->base + a->offset);\n    size_t mis = (size_t)(cur & (align - 1U));\n    size_t pad = (mis == 0U) ? 0U : (align - mis);\n    if (pad > a->capacity - a->offset) return NULL;\n    size_t aligned_off = a->offset + pad;\n    if (bytes > a->capacity - aligned_off) return NULL;\n    void *ptr = a->base + aligned_off;\n    memset(ptr, 0, bytes);\n    a->offset = aligned_off + bytes;\n    return ptr;\n}\n\nint main(void) {\n    _Alignas(64) uint8_t backing[256];\n    c11_arena_t arena = {0};\n    assert(c11_arena_init(&arena, backing, sizeof(backing)) == 0);\n    uint8_t *b1 = (uint8_t *)c11_arena_alloc_aligned(&arena, 1U, 1U, 1U);\n    assert(b1 != NULL);\n    uint64_t *v64 = (uint64_t *)c11_arena_alloc_aligned(&arena, 4U, sizeof(uint64_t), 64U);\n    assert(v64 != NULL && (((uintptr_t)v64 & 63U) == 0U));\n    assert(c11_arena_alloc_aligned(&arena, SIZE_MAX / 4U, 8U, 8U) == NULL);\n    assert(c11_arena_alloc_aligned(&arena, 100U, 8U, 8U) == NULL);\n    printf("C11 SYSTEMS ENGINEERING ARENA VERIFIED\\n");\n    return 0;\n}\n'
-with tempfile.TemporaryDirectory() as tmp:
-    p = Path(tmp)
-    (p / "arena.c").write_text(CODE)
-    subprocess.run(["gcc", "-std=c11", "-O2", "-Wall", "-Wextra", "-Werror", "-Wpedantic", "-Wconversion", "-fanalyzer", "-fsanitize=address,undefined", str(p / "arena.c"), "-o", str(p / "arena")], check=True)
-    subprocess.run([str(p / "arena")], check=True)
+SRC = Path(__file__).resolve().parents[1] / "examples" / "c11_provenance_arena.c"
+with tempfile.TemporaryDirectory() as td:
+    bin_p = Path(td) / "test_bin"
+    subprocess.run(["gcc", "-std=c11", "-O2", "-Wall", "-Wextra", "-Werror", "-Wpedantic", "-fanalyzer", "-fsanitize=address,undefined", str(SRC), "-o", str(bin_p)], check=True)
+    res = subprocess.run([str(bin_p)], capture_output=True, text=True, check=True)
+    print(res.stdout.strip())

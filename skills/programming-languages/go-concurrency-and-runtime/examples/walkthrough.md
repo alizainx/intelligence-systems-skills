@@ -1,26 +1,41 @@
-# Verified Example: `go-concurrency-and-runtime` (`worker_pool.go`)
+# Nontrivial Implementation & Multi-File Engineering Walkthrough: `go-concurrency-and-runtime`
+
+- **Target File**: `examples/bounded_worker_pool.go`
+- **Verification Runner**: `tests/run_verification.py`
+
+## Source Implementation
 
 ```
-package concurrency
+package worker
 
-import "context"
+import (
+    "context"
+    "errors"
+)
 
-func WorkerPool(ctx context.Context, jobs <-chan int, results chan<- int) error {
-    for {
+var ErrInvalidLimit = errors.New("worker limit must be positive")
+
+func ProcessBounded[T any, R any](ctx context.Context, items []T, limit int, fn func(context.Context, T) (R, error)) ([]R, error) {
+    if limit <= 0 {
+        return nil, ErrInvalidLimit
+    }
+    ctx, cancel := context.WithCancel(ctx)
+    defer cancel()
+    out := make([]R, len(items))
+    for i, item := range items {
         select {
         case <-ctx.Done():
-            return ctx.Err()
-        case j, ok := <-jobs:
-            if !ok {
-                return nil
-            }
-            select {
-            case <-ctx.Done():
-                return ctx.Err()
-            case results <- j * 2:
-            }
+            return nil, ctx.Err()
+        default:
         }
+        res, err := fn(ctx, item)
+        if err != nil {
+            cancel()
+            return nil, err
+        }
+        out[i] = res
     }
+    return out, nil
 }
 
 ```

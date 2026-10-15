@@ -1,0 +1,24 @@
+# Nontrivial Implementation & Multi-File Engineering Walkthrough: `scheme-continuations-hygienic-macros`
+
+- **Target File**: `examples/tailrec_ring_checksum.scm`
+- **Verification Runner**: `tests/run_verification.py`
+
+## Source Implementation
+
+```
+(define-library (iss tailrec-checksum)
+  (import (scheme base))
+  (export bytevector-adler32)
+  (begin
+    (define mod-adler 65521)
+    (define (bytevector-adler32 bv)
+      (let ((len (bytevector-length bv)))
+        (let loop ((i 0) (a 1) (b 0))
+          (if (= i len)
+              (+ (* b 65536) a)
+              (let* ((byte (bytevector-u8-ref bv i))
+                     (a-next (modulo (+ a byte) mod-adler))
+                     (b-next (modulo (+ b a-next) mod-adler)))
+                (loop (+ i 1) a-next b-next))))))))
+
+```
