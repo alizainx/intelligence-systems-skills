@@ -1,10 +1,9 @@
-# Intelligence Systems Skills (`intelligence-systems-skills`)
+# `intelligence-systems-skills`
 
 **Universal Programming, Operating Systems, Linux, Kernel & Compiler Engineering Intelligence**
 
 `intelligence-systems-skills` is an independent, standalone, model-agnostic AI Skills Ecosystem engineered for systems programming, 50 programming/specialized languages, operating system kernels, Linux distributions (including Linux From Scratch and non-systemd/musl/relibc systems), multi-architecture kernel engineering (`x86_64`, `AArch64`, `RISC-V`), compiler toolchains, programming language design, runtime garbage collection, and disciplined AI coding workflows (`UNDERSTAND -> PLAN -> IMPLEMENT -> COMPILE -> TEST -> VERIFY -> REVIEW`).
 
-> **Repository Independence**: `intelligence-systems-skills` is a completely separate repository from `engineering-ai-skills`, with its own skill registry (`schemas/skill-registry.json`), 50-language taxonomy (`schemas/language-coverage-matrix.json`), intelligent skill router (`evaluation/skill_router.py`), and 42 specialized software/systems/OS/kernel/compiler skills.
 
 ## Key Metrics & Verification Summary
 
@@ -29,17 +28,6 @@ python3 evaluation/pipeline.py
 python3 tests/regression/test_intelligence_systems.py
 ```
 
-## GitHub Publishing Instructions
-
-```bash
-unzip intelligence-systems-skills-complete.zip -d intelligence-systems-skills-release
-cd intelligence-systems-skills-release/intelligence-systems-skills
-git init -b main
-git add .
-git commit -m "feat: initial release of intelligence-systems-skills (42 skills, 50 languages)"
-git remote add origin https://github.com/<your-username>/intelligence-systems-skills.git
-git push -u origin main
-```
 
 ## License
 
