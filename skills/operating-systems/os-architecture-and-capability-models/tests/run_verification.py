@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+import subprocess, tempfile
+from pathlib import Path
+CODE = '#include <assert.h>\n#include <stdbool.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <stdbool.h>\n\n#define CAP_RIGHT_READ  (1U << 0U)\n#define CAP_RIGHT_WRITE (1U << 1U)\n#define CAP_RIGHT_GRANT (1U << 2U)\n\ntypedef struct {\n    uint64_t object_id;\n    uint32_t rights_mask;\n    uint32_t badge;\n} capability_t;\n\n/* Capability derivation rule (seL4/L4 monotonic attenuation):\n * A derived capability can NEVER gain rights not present in the parent capability!\n */\nstatic int cap_mint_derived(const capability_t *parent, uint32_t requested_rights, uint32_t badge, capability_t *out) {\n    if (!parent || !out) return -1;\n    if ((requested_rights & ~parent->rights_mask) != 0U) {\n        return -2; /* Escalation of privilege rejected! */\n    }\n    out->object_id = parent->object_id;\n    out->rights_mask = requested_rights;\n    out->badge = badge;\n    return 0;\n}\n\nint main(void) {\n    capability_t root = {.object_id = 0x100ULL, .rights_mask = CAP_RIGHT_READ | CAP_RIGHT_WRITE, .badge = 0U};\n    capability_t ro_child = {0};\n    assert(cap_mint_derived(&root, CAP_RIGHT_READ, 42U, &ro_child) == 0);\n    assert(ro_child.rights_mask == CAP_RIGHT_READ && ro_child.badge == 42U);\n    /* Attempt privilege escalation (requesting GRANT right not in root) -> must be rejected (-2) */\n    assert(cap_mint_derived(&ro_child, CAP_RIGHT_READ | CAP_RIGHT_WRITE, 1U, &ro_child) == -2);\n    puts("OS CAPABILITY MONOTONIC ATTENUATION VERIFIED");\n    return 0;\n}\n'
+with tempfile.TemporaryDirectory() as tmp:
+    p = Path(tmp) / "cap.c"
+    p.write_text(CODE)
+    subprocess.run(["gcc", "-std=c11", "-O2", "-Wall", "-Wextra", "-Werror", "-Wconversion", "-fanalyzer", "-fsanitize=address,undefined", str(p), "-o", str(p.with_suffix(""))], check=True)
+    subprocess.run([str(p.with_suffix(""))], check=True)

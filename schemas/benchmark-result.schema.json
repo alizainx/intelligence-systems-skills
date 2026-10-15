@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IntelligenceSystemsBenchmarkReport",
+  "type": "object",
+  "required": [
+    "repository",
+    "framework_version",
+    "mode_summaries",
+    "task_comparisons"
+  ],
+  "properties": {
+    "repository": {
+      "type": "string",
+      "const": "intelligence-systems-skills"
+    },
+    "framework_version": {
+      "type": "string"
+    },
+    "mode_summaries": {
+      "type": "object"
+    },
+    "task_comparisons": {
+      "type": "array"
+    }
+  }
+}

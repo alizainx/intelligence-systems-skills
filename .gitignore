@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+build/
+target/
+*.o
+*.so
+*.a
+*.out
+.DS_Store

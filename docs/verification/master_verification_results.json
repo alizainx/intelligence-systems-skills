@@ -1,0 +1,430 @@
+{
+  "repository": "intelligence-systems-skills",
+  "total_skills": 42,
+  "total_passed": 29,
+  "fully_verified_native_execution": 22,
+  "partially_verified_host_model_checked": 7,
+  "failed": 13,
+  "results": [
+    {
+      "id": "ISS-01",
+      "name": "c-systems-engineering",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 1164.9,
+      "output": ""
+    },
+    {
+      "id": "ISS-02",
+      "name": "modern-cpp-systems",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 1434.1,
+      "output": ""
+    },
+    {
+      "id": "ISS-03",
+      "name": "rust-ownership-and-nostd",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 173.3,
+      "output": "PARTIALLY VERIFIED: Rust #![no_std] AST & checked_ring_index verified (rustc target check designed for CI)."
+    },
+    {
+      "id": "ISS-04",
+      "name": "zig-explicit-allocators-comptime",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 118.17,
+      "output": "PARTIALLY VERIFIED: Zig explicit allocator & errdefer unwind leak check passed (zig compiler designed for CI)."
+    },
+    {
+      "id": "ISS-05",
+      "name": "x86-64-and-arm-assembly",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 315.66,
+      "output": "NATIVE X86_64 ASSEMBLY ABI & EXECUTION VERIFIED"
+    },
+    {
+      "id": "ISS-06",
+      "name": "ada-spark-formal-contracts",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 110.26,
+      "output": "PARTIALLY VERIFIED: Ada/SPARK range subtype & Pre/Post contract model verified (gnatprove designed for CI)."
+    },
+    {
+      "id": "ISS-07",
+      "name": "d-nim-odin-fortran-systems",
+      "category": "systems-programming",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 242.09,
+      "output": ""
+    },
+    {
+      "id": "ISS-08",
+      "name": "python-production-engineering",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 154.43,
+      "output": "PYTHON 3.11 PRODUCTION ENGINEERING AST & TOKEN BUCKET VERIFIED"
+    },
+    {
+      "id": "ISS-09",
+      "name": "javascript-typescript-runtime",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 815.11,
+      "output": "NODE.JS V18 JAVASCRIPT & TYPESCRIPT RUNTIME SAFETY VERIFIED"
+    },
+    {
+      "id": "ISS-10",
+      "name": "jvm-dotnet-managed-systems",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 91.61,
+      "output": "PARTIALLY VERIFIED: Java/Kotlin/Scala (JVM) & C# (CLR) JMM happens-before & bounds model verified."
+    },
+    {
+      "id": "ISS-11",
+      "name": "go-concurrency-and-runtime",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 81.44,
+      "output": "PARTIALLY VERIFIED: Go context cancellation & goroutine leak-prevention select invariants verified (go toolchain designed for CI)."
+    },
+    {
+      "id": "ISS-12",
+      "name": "functional-and-beam-languages",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 79.58,
+      "output": "PARTIALLY VERIFIED: Functional (Haskell/OCaml/F#/Lisp/Scheme/Racket/Clojure) ADT totality & BEAM (Erlang/Elixir) OTP supervisor intensity verified."
+    },
+    {
+      "id": "ISS-13",
+      "name": "scripting-and-dynamic-languages",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 233.14,
+      "output": "NATIVE BASH 5.2 (set -euo pipefail) & PERL 5 (strict/warnings) VERIFIED"
+    },
+    {
+      "id": "ISS-14",
+      "name": "sql-and-relational-database-engineering",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 124.27,
+      "output": "NATIVE SQLITE3 ACID, PARAMETERIZED INJECTION DEFENSE & INDEX PLAN VERIFIED"
+    },
+    {
+      "id": "ISS-15",
+      "name": "scientific-and-gpu-shader-languages",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "PARTIALLY VERIFIED",
+      "elapsed_ms": 93.72,
+      "output": "PARTIALLY VERIFIED: CUDA/OpenCL 32-bank conflict elimination & GLSL/HLSL/Julia/R/MATLAB vectorization verified."
+    },
+    {
+      "id": "ISS-16",
+      "name": "hdl-and-low-level-ir-languages",
+      "category": "programming-languages",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 333.03,
+      "output": "NATIVE WEBASSEMBLY BINARY MODULE & HDL CDC/SSA VERIFIED"
+    },
+    {
+      "id": "ISS-17",
+      "name": "os-architecture-and-capability-models",
+      "category": "operating-systems",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 444.36,
+      "output": ""
+    },
+    {
+      "id": "ISS-18",
+      "name": "boot-architecture-uefi-limine-multiboot",
+      "category": "operating-systems",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 488.92,
+      "output": ""
+    },
+    {
+      "id": "ISS-19",
+      "name": "os-memory-management-vmm-slab-cow",
+      "category": "operating-systems",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 430.33,
+      "output": ""
+    },
+    {
+      "id": "ISS-20",
+      "name": "os-process-scheduler-smp-ipc",
+      "category": "operating-systems",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 482.35,
+      "output": ""
+    },
+    {
+      "id": "ISS-21",
+      "name": "os-vfs-journaling-and-cow-filesystems",
+      "category": "operating-systems",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 159.33,
+      "output": "OS VFS & WRITE-AHEAD JOURNALING CRASH RECOVERY ATOMICITY & IDEMPOTENCE VERIFIED"
+    },
+    {
+      "id": "ISS-22",
+      "name": "os-device-drivers-pcie-nvme-dma",
+      "category": "operating-systems",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 365.23,
+      "output": ""
+    },
+    {
+      "id": "ISS-23",
+      "name": "linux-kernel-modules-ebpf-and-vfs",
+      "category": "linux-development",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 94.66,
+      "output": "LINUX KERNEL EBPF VERIFIER PACKET BOUNDS & MODULE SAFETY VERIFIED"
+    },
+    {
+      "id": "ISS-24",
+      "name": "linux-from-scratch-toolchain-bootstrap",
+      "category": "linux-development",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 205.94,
+      "output": "LINUX FROM SCRATCH (LFS) 3-STAGE BOOTSTRAP DAG & ELF64 PT_INTERP AUDIT VERIFIED"
+    },
+    {
+      "id": "ISS-25",
+      "name": "linux-distribution-and-immutable-os",
+      "category": "linux-development",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 84.22,
+      "output": "LINUX DISTRIBUTION PACKAGE DEPENDENCY/CONFLICT SOLVER & ATOMIC UPDATE VERIFIED"
+    },
+    {
+      "id": "ISS-26",
+      "name": "linux-userspace-libc-elf-and-wayland",
+      "category": "linux-development",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 326.63,
+      "output": ""
+    },
+    {
+      "id": "ISS-27",
+      "name": "multi-arch-freestanding-kernels",
+      "category": "kernel-engineering",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 276.78,
+      "output": ""
+    },
+    {
+      "id": "ISS-28",
+      "name": "interrupt-safe-and-lockfree-kernel",
+      "category": "kernel-engineering",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 381.41,
+      "output": ""
+    },
+    {
+      "id": "ISS-29",
+      "name": "kernel-security-and-sandboxing",
+      "category": "kernel-engineering",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 438.89,
+      "output": ""
+    },
+    {
+      "id": "ISS-30",
+      "name": "cpu-microarchitecture-isa-and-mesi",
+      "category": "computer-architecture",
+      "structural_valid": true,
+      "test_passed": false,
+      "status": "FAILED",
+      "elapsed_ms": 604.49,
+      "output": ""
+    },
+    {
+      "id": "ISS-31",
+      "name": "software-architecture-and-api-design",
+      "category": "software-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 144.64,
+      "output": "SOFTWARE ARCHITECTURE IDEMPOTENCY KEY & API CONTRACT VERIFIED"
+    },
+    {
+      "id": "ISS-32",
+      "name": "concurrency-async-and-distributed",
+      "category": "software-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 96.19,
+      "output": "CONCURRENCY WAIT-FOR GRAPH DEADLOCK CYCLE DETECTOR VERIFIED"
+    },
+    {
+      "id": "ISS-33",
+      "name": "large-codebase-modernization-refactoring",
+      "category": "software-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 110.99,
+      "output": "LEGACY MODERNIZATION CHARACTERIZATION & SIGNED DIVISION SEMANTICS AUDIT VERIFIED"
+    },
+    {
+      "id": "ISS-34",
+      "name": "ai-coding-agent-workflow",
+      "category": "ai-coding-intelligence",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 96.65,
+      "output": "AI CODING AGENT 7-STAGE WORKFLOW GATE (UNDERSTAND->...->REVIEW) VERIFIED"
+    },
+    {
+      "id": "ISS-35",
+      "name": "compiler-frontend-lexer-parser-typechecker",
+      "category": "compiler-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 136.98,
+      "output": "COMPILER FRONTEND HINDLEY-MILNER UNIFICATION & OCCURS-CHECK VERIFIED"
+    },
+    {
+      "id": "ISS-36",
+      "name": "compiler-ir-ssa-and-optimizations",
+      "category": "compiler-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 95.62,
+      "output": "COMPILER SSA IR & POLETTO-SARKAR LINEAR-SCAN REGISTER ALLOCATOR VERIFIED"
+    },
+    {
+      "id": "ISS-37",
+      "name": "compiler-backend-elf-dwarf-and-linkers",
+      "category": "compiler-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 172.65,
+      "output": "ALL ADVANCED SYSTEMS CFG DOMINATOR, ELF64 RELOCATION & RTOS RTA TESTS PASSED (RTA={'T1': 3, 'T2': 9, 'T3': 36})"
+    },
+    {
+      "id": "ISS-38",
+      "name": "compiler-correctness-and-translation-validation",
+      "category": "compiler-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 131.66,
+      "output": "ALL COMPILER & PL ENGINEERING SSA + TRANSLATION VALIDATION TESTS PASSED"
+    },
+    {
+      "id": "ISS-39",
+      "name": "language-design-and-ownership-semantics",
+      "category": "programming-language-development",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 93.56,
+      "output": "PROGRAMMING LANGUAGE DESIGN AFFINE OWNERSHIP & BORROW CHECKER VERIFIED"
+    },
+    {
+      "id": "ISS-40",
+      "name": "runtime-gc-allocator-and-ffi-engineering",
+      "category": "runtime-engineering",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 99.68,
+      "output": "RUNTIME TRI-COLOR GARBAGE COLLECTOR & WRITE BARRIER INVARIANT VERIFIED"
+    },
+    {
+      "id": "ISS-41",
+      "name": "language-tooling-lsp-formatter-repl",
+      "category": "programming-language-development",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 116.99,
+      "output": "LANGUAGE TOOLING LSP JSON-RPC UTF-8 BYTE FRAMING VERIFIED"
+    },
+    {
+      "id": "ISS-42",
+      "name": "self-hosting-and-compiler-bootstrapping",
+      "category": "programming-language-development",
+      "structural_valid": true,
+      "test_passed": true,
+      "status": "VERIFIED",
+      "elapsed_ms": 95.74,
+      "output": "SELF-HOSTING COMPILER STAGE-2/3 FIXED POINT & DIVERSE DOUBLE-COMPILING (DDC) TRUST CHECK VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,573 @@
+{
+  "benchmark_suite": "intelligence-systems-skills-v1",
+  "evaluation_type": "DETERMINISTIC_HARNESS_AND_ROUTER_VERIFICATION (Live LLM API calls marked NOT EXECUTED in air-gapped VM)",
+  "live_model_providers": [
+    {
+      "provider": "Google Gemini",
+      "model": "gemini-2.5-pro",
+      "credential_env": "GEMINI_API_KEY",
+      "credentials_present": false,
+      "execution_status": "NOT EXECUTED (Air-Gapped Sandbox / No API Key Configured)"
+    },
+    {
+      "provider": "Anthropic Claude",
+      "model": "claude-3-7-sonnet",
+      "credential_env": "ANTHROPIC_API_KEY",
+      "credentials_present": false,
+      "execution_status": "NOT EXECUTED (Air-Gapped Sandbox / No API Key Configured)"
+    },
+    {
+      "provider": "OpenAI GPT",
+      "model": "gpt-4.1",
+      "credential_env": "OPENAI_API_KEY",
+      "credentials_present": false,
+      "execution_status": "NOT EXECUTED (Air-Gapped Sandbox / No API Key Configured)"
+    },
+    {
+      "provider": "Local LLM (Ollama/vLLM)",
+      "model": "qwen2.5-coder:32b",
+      "credential_env": "LOCAL_LLM_BASE_URL",
+      "credentials_present": false,
+      "execution_status": "NOT EXECUTED (Air-Gapped Sandbox / No API Key Configured)"
+    }
+  ],
+  "mode_summary": {
+    "Mode_A": {
+      "tasks_evaluated": 12,
+      "harness_compilation_and_test_pass_rate": 0.75,
+      "mean_skill_selection_accuracy": 0.0,
+      "mean_skill_context_tokens": 0.0,
+      "mean_verification_time_ms": 158.77
+    },
+    "Mode_B": {
+      "tasks_evaluated": 12,
+      "harness_compilation_and_test_pass_rate": 0.75,
+      "mean_skill_selection_accuracy": 0.4583,
+      "mean_skill_context_tokens": 1144.0,
+      "mean_verification_time_ms": 158.77
+    },
+    "Mode_C": {
+      "tasks_evaluated": 12,
+      "harness_compilation_and_test_pass_rate": 0.75,
+      "mean_skill_selection_accuracy": 0.875,
+      "mean_skill_context_tokens": 7249.0,
+      "mean_verification_time_ms": 158.77
+    }
+  },
+  "detailed_results": {
+    "A": [
+      {
+        "task_id": "BENCH-01-C11-ARENA",
+        "title": "ISO C11 Checked Aligned Arena Allocator",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 316.04,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-02-ASM-SYSV",
+        "title": "Native x86_64 System V ABI Assembly Dot Product",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 201.15,
+        "harness_output": "NATIVE X86_64 ASSEMBLY ABI & EXECUTION VERIFIED"
+      },
+      {
+        "task_id": "BENCH-03-WASM-HDL",
+        "title": "Native WebAssembly Binary Instantiation & HDL CDC Verification",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 262.6,
+        "harness_output": "NATIVE WEBASSEMBLY BINARY MODULE & HDL CDC/SSA VERIFIED"
+      },
+      {
+        "task_id": "BENCH-04-SQL-ACID",
+        "title": "SQLite3 ACID Transaction & Parameterized Injection Defense",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 50.76,
+        "harness_output": "NATIVE SQLITE3 ACID, PARAMETERIZED INJECTION DEFENSE & INDEX PLAN VERIFIED"
+      },
+      {
+        "task_id": "BENCH-05-OS-VMM-COW",
+        "title": "OS Virtual Memory Copy-on-Write (CoW) Page Fault Handler",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 328.28,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-06-OS-VFS-WAL",
+        "title": "OS Write-Ahead Journaling Filesystem Crash Recovery",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 71.8,
+        "harness_output": "OS VFS & WRITE-AHEAD JOURNALING CRASH RECOVERY ATOMICITY & IDEMPOTENCE VERIFIED"
+      },
+      {
+        "task_id": "BENCH-07-LINUX-EBPF",
+        "title": "Linux Kernel eBPF Packet Bounds Verifier & Module Cleanup",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 34.4,
+        "harness_output": "LINUX KERNEL EBPF VERIFIER PACKET BOUNDS & MODULE SAFETY VERIFIED"
+      },
+      {
+        "task_id": "BENCH-08-LINUX-LFS",
+        "title": "Linux From Scratch 3-Stage Toolchain Bootstrap & ELF PT_INTERP Validator",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 167.63,
+        "harness_output": "LINUX FROM SCRATCH (LFS) 3-STAGE BOOTSTRAP DAG & ELF64 PT_INTERP AUDIT VERIFIED"
+      },
+      {
+        "task_id": "BENCH-09-KERNEL-SEQLOCK",
+        "title": "Kernel Interrupt-Safe Seqlock & Acquire-Release Ordering",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 279.81,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-10-COMPILER-HM",
+        "title": "Compiler Frontend Hindley-Milner Type Inference with Occurs-Check",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 73.34,
+        "harness_output": "COMPILER FRONTEND HINDLEY-MILNER UNIFICATION & OCCURS-CHECK VERIFIED"
+      },
+      {
+        "task_id": "BENCH-11-COMPILER-ELF64",
+        "title": "Compiler Backend ELF64 Relocation & CFG Dominator Engine",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 87.56,
+        "harness_output": "ALL ADVANCED SYSTEMS CFG DOMINATOR, ELF64 RELOCATION & RTOS RTA TESTS PASSED (RTA={'T1': 3, 'T2': 9, 'T3': 36})"
+      },
+      {
+        "task_id": "BENCH-12-PL-GC-BOOTSTRAP",
+        "title": "Tri-Color GC Dijkstra Write Barrier & Stage-2/3 Self-Hosting Verification",
+        "mode": "A",
+        "selected_skills": [],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 0,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 31.87,
+        "harness_output": "RUNTIME TRI-COLOR GARBAGE COLLECTOR & WRITE BARRIER INVARIANT VERIFIED"
+      }
+    ],
+    "B": [
+      {
+        "task_id": "BENCH-01-C11-ARENA",
+        "title": "ISO C11 Checked Aligned Arena Allocator",
+        "mode": "B",
+        "selected_skills": [
+          "c-systems-engineering"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 316.04,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-02-ASM-SYSV",
+        "title": "Native x86_64 System V ABI Assembly Dot Product",
+        "mode": "B",
+        "selected_skills": [
+          "x86-64-and-arm-assembly"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 201.15,
+        "harness_output": "NATIVE X86_64 ASSEMBLY ABI & EXECUTION VERIFIED"
+      },
+      {
+        "task_id": "BENCH-03-WASM-HDL",
+        "title": "Native WebAssembly Binary Instantiation & HDL CDC Verification",
+        "mode": "B",
+        "selected_skills": [
+          "hdl-and-low-level-ir-languages"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 262.6,
+        "harness_output": "NATIVE WEBASSEMBLY BINARY MODULE & HDL CDC/SSA VERIFIED"
+      },
+      {
+        "task_id": "BENCH-04-SQL-ACID",
+        "title": "SQLite3 ACID Transaction & Parameterized Injection Defense",
+        "mode": "B",
+        "selected_skills": [
+          "sql-and-relational-database-engineering"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 50.76,
+        "harness_output": "NATIVE SQLITE3 ACID, PARAMETERIZED INJECTION DEFENSE & INDEX PLAN VERIFIED"
+      },
+      {
+        "task_id": "BENCH-05-OS-VMM-COW",
+        "title": "OS Virtual Memory Copy-on-Write (CoW) Page Fault Handler",
+        "mode": "B",
+        "selected_skills": [
+          "os-memory-management-vmm-slab-cow"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 328.28,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-06-OS-VFS-WAL",
+        "title": "OS Write-Ahead Journaling Filesystem Crash Recovery",
+        "mode": "B",
+        "selected_skills": [
+          "os-vfs-journaling-and-cow-filesystems"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 71.8,
+        "harness_output": "OS VFS & WRITE-AHEAD JOURNALING CRASH RECOVERY ATOMICITY & IDEMPOTENCE VERIFIED"
+      },
+      {
+        "task_id": "BENCH-07-LINUX-EBPF",
+        "title": "Linux Kernel eBPF Packet Bounds Verifier & Module Cleanup",
+        "mode": "B",
+        "selected_skills": [
+          "linux-kernel-modules-ebpf-and-vfs"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 34.4,
+        "harness_output": "LINUX KERNEL EBPF VERIFIER PACKET BOUNDS & MODULE SAFETY VERIFIED"
+      },
+      {
+        "task_id": "BENCH-08-LINUX-LFS",
+        "title": "Linux From Scratch 3-Stage Toolchain Bootstrap & ELF PT_INTERP Validator",
+        "mode": "B",
+        "selected_skills": [
+          "compiler-backend-elf-dwarf-and-linkers"
+        ],
+        "skill_selection_accuracy": 0.0,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 167.63,
+        "harness_output": "LINUX FROM SCRATCH (LFS) 3-STAGE BOOTSTRAP DAG & ELF64 PT_INTERP AUDIT VERIFIED"
+      },
+      {
+        "task_id": "BENCH-09-KERNEL-SEQLOCK",
+        "title": "Kernel Interrupt-Safe Seqlock & Acquire-Release Ordering",
+        "mode": "B",
+        "selected_skills": [
+          "interrupt-safe-and-lockfree-kernel"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 279.81,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-10-COMPILER-HM",
+        "title": "Compiler Frontend Hindley-Milner Type Inference with Occurs-Check",
+        "mode": "B",
+        "selected_skills": [
+          "compiler-frontend-lexer-parser-typechecker"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 73.34,
+        "harness_output": "COMPILER FRONTEND HINDLEY-MILNER UNIFICATION & OCCURS-CHECK VERIFIED"
+      },
+      {
+        "task_id": "BENCH-11-COMPILER-ELF64",
+        "title": "Compiler Backend ELF64 Relocation & CFG Dominator Engine",
+        "mode": "B",
+        "selected_skills": [
+          "compiler-backend-elf-dwarf-and-linkers"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 87.56,
+        "harness_output": "ALL ADVANCED SYSTEMS CFG DOMINATOR, ELF64 RELOCATION & RTOS RTA TESTS PASSED (RTA={'T1': 3, 'T2': 9, 'T3': 36})"
+      },
+      {
+        "task_id": "BENCH-12-PL-GC-BOOTSTRAP",
+        "title": "Tri-Color GC Dijkstra Write Barrier & Stage-2/3 Self-Hosting Verification",
+        "mode": "B",
+        "selected_skills": [
+          "runtime-gc-allocator-and-ffi-engineering"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 1144,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 31.87,
+        "harness_output": "RUNTIME TRI-COLOR GARBAGE COLLECTOR & WRITE BARRIER INVARIANT VERIFIED"
+      }
+    ],
+    "C": [
+      {
+        "task_id": "BENCH-01-C11-ARENA",
+        "title": "ISO C11 Checked Aligned Arena Allocator",
+        "mode": "C",
+        "selected_skills": [
+          "c-systems-engineering",
+          "zig-explicit-allocators-comptime",
+          "scientific-and-gpu-shader-languages"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 3432,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 316.04,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-02-ASM-SYSV",
+        "title": "Native x86_64 System V ABI Assembly Dot Product",
+        "mode": "C",
+        "selected_skills": [
+          "x86-64-and-arm-assembly",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 3432,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 201.15,
+        "harness_output": "NATIVE X86_64 ASSEMBLY ABI & EXECUTION VERIFIED"
+      },
+      {
+        "task_id": "BENCH-03-WASM-HDL",
+        "title": "Native WebAssembly Binary Instantiation & HDL CDC Verification",
+        "mode": "C",
+        "selected_skills": [
+          "hdl-and-low-level-ir-languages",
+          "javascript-typescript-runtime",
+          "concurrency-async-and-distributed",
+          "x86-64-and-arm-assembly",
+          "c-systems-engineering",
+          "software-architecture-and-api-design"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 6864,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 262.6,
+        "harness_output": "NATIVE WEBASSEMBLY BINARY MODULE & HDL CDC/SSA VERIFIED"
+      },
+      {
+        "task_id": "BENCH-04-SQL-ACID",
+        "title": "SQLite3 ACID Transaction & Parameterized Injection Defense",
+        "mode": "C",
+        "selected_skills": [
+          "sql-and-relational-database-engineering",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 3432,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 50.76,
+        "harness_output": "NATIVE SQLITE3 ACID, PARAMETERIZED INJECTION DEFENSE & INDEX PLAN VERIFIED"
+      },
+      {
+        "task_id": "BENCH-05-OS-VMM-COW",
+        "title": "OS Virtual Memory Copy-on-Write (CoW) Page Fault Handler",
+        "mode": "C",
+        "selected_skills": [
+          "os-memory-management-vmm-slab-cow",
+          "os-architecture-and-capability-models",
+          "runtime-gc-allocator-and-ffi-engineering",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages",
+          "compiler-frontend-lexer-parser-typechecker",
+          "language-design-and-ownership-semantics"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 8008,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 328.28,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-06-OS-VFS-WAL",
+        "title": "OS Write-Ahead Journaling Filesystem Crash Recovery",
+        "mode": "C",
+        "selected_skills": [
+          "os-vfs-journaling-and-cow-filesystems",
+          "language-tooling-lsp-formatter-repl",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages",
+          "scripting-and-dynamic-languages",
+          "os-architecture-and-capability-models",
+          "os-memory-management-vmm-slab-cow",
+          "compiler-frontend-lexer-parser-typechecker"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 9152,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 71.8,
+        "harness_output": "OS VFS & WRITE-AHEAD JOURNALING CRASH RECOVERY ATOMICITY & IDEMPOTENCE VERIFIED"
+      },
+      {
+        "task_id": "BENCH-07-LINUX-EBPF",
+        "title": "Linux Kernel eBPF Packet Bounds Verifier & Module Cleanup",
+        "mode": "C",
+        "selected_skills": [
+          "linux-kernel-modules-ebpf-and-vfs",
+          "c-systems-engineering",
+          "compiler-frontend-lexer-parser-typechecker",
+          "multi-arch-freestanding-kernels",
+          "scientific-and-gpu-shader-languages",
+          "os-architecture-and-capability-models",
+          "os-memory-management-vmm-slab-cow",
+          "x86-64-and-arm-assembly"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 9152,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 34.4,
+        "harness_output": "LINUX KERNEL EBPF VERIFIER PACKET BOUNDS & MODULE SAFETY VERIFIED"
+      },
+      {
+        "task_id": "BENCH-08-LINUX-LFS",
+        "title": "Linux From Scratch 3-Stage Toolchain Bootstrap & ELF PT_INTERP Validator",
+        "mode": "C",
+        "selected_skills": [
+          "linux-from-scratch-toolchain-bootstrap",
+          "linux-distribution-and-immutable-os",
+          "os-vfs-journaling-and-cow-filesystems",
+          "linux-userspace-libc-elf-and-wayland",
+          "kernel-security-and-sandboxing",
+          "compiler-backend-elf-dwarf-and-linkers",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages",
+          "compiler-frontend-lexer-parser-typechecker",
+          "compiler-ir-ssa-and-optimizations"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 11440,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 167.63,
+        "harness_output": "LINUX FROM SCRATCH (LFS) 3-STAGE BOOTSTRAP DAG & ELF64 PT_INTERP AUDIT VERIFIED"
+      },
+      {
+        "task_id": "BENCH-09-KERNEL-SEQLOCK",
+        "title": "Kernel Interrupt-Safe Seqlock & Acquire-Release Ordering",
+        "mode": "C",
+        "selected_skills": [
+          "interrupt-safe-and-lockfree-kernel",
+          "concurrency-async-and-distributed",
+          "multi-arch-freestanding-kernels",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages",
+          "x86-64-and-arm-assembly",
+          "os-architecture-and-capability-models",
+          "software-architecture-and-api-design"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 9152,
+        "harness_verification_passed": false,
+        "harness_execution_time_ms": 279.81,
+        "harness_output": ""
+      },
+      {
+        "task_id": "BENCH-10-COMPILER-HM",
+        "title": "Compiler Frontend Hindley-Milner Type Inference with Occurs-Check",
+        "mode": "C",
+        "selected_skills": [
+          "compiler-frontend-lexer-parser-typechecker",
+          "c-systems-engineering",
+          "go-concurrency-and-runtime",
+          "scientific-and-gpu-shader-languages"
+        ],
+        "skill_selection_accuracy": 0.5,
+        "estimated_tokens": 4576,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 73.34,
+        "harness_output": "COMPILER FRONTEND HINDLEY-MILNER UNIFICATION & OCCURS-CHECK VERIFIED"
+      },
+      {
+        "task_id": "BENCH-11-COMPILER-ELF64",
+        "title": "Compiler Backend ELF64 Relocation & CFG Dominator Engine",
+        "mode": "C",
+        "selected_skills": [
+          "compiler-backend-elf-dwarf-and-linkers",
+          "compiler-ir-ssa-and-optimizations",
+          "x86-64-and-arm-assembly",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages",
+          "compiler-frontend-lexer-parser-typechecker"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 6864,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 87.56,
+        "harness_output": "ALL ADVANCED SYSTEMS CFG DOMINATOR, ELF64 RELOCATION & RTOS RTA TESTS PASSED (RTA={'T1': 3, 'T2': 9, 'T3': 36})"
+      },
+      {
+        "task_id": "BENCH-12-PL-GC-BOOTSTRAP",
+        "title": "Tri-Color GC Dijkstra Write Barrier & Stage-2/3 Self-Hosting Verification",
+        "mode": "C",
+        "selected_skills": [
+          "language-design-and-ownership-semantics",
+          "compiler-frontend-lexer-parser-typechecker",
+          "compiler-ir-ssa-and-optimizations",
+          "compiler-backend-elf-dwarf-and-linkers",
+          "compiler-correctness-and-translation-validation",
+          "runtime-gc-allocator-and-ffi-engineering",
+          "self-hosting-and-compiler-bootstrapping",
+          "c-systems-engineering",
+          "scientific-and-gpu-shader-languages",
+          "x86-64-and-arm-assembly"
+        ],
+        "skill_selection_accuracy": 1.0,
+        "estimated_tokens": 11484,
+        "harness_verification_passed": true,
+        "harness_execution_time_ms": 31.87,
+        "harness_output": "RUNTIME TRI-COLOR GARBAGE COLLECTOR & WRITE BARRIER INVARIANT VERIFIED"
+      }
+    ]
+  }
+}

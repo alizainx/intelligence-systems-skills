@@ -1,0 +1,39 @@
+name: Intelligence Systems Skills CI & Verification Gate
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-systems-skills:
+    name: 42-Skill Structural, Compiler, Assembly, Wasm, Kernel & Evaluation Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11 and Node.js 18
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install System Compilers, Binutils & Sanitizers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc g++ binutils libasan8 libubsan1 perl bash nodejs
+
+      - name: Run Master 42-Skill Verification Suite
+        run: |
+          python3 tests/run_all_verifications.py
+
+      - name: Run Cross-Model Evaluation & Routing Regression Suite
+        run: |
+          python3 evaluation/pipeline.py
+          python3 tests/regression/test_intelligence_systems.py

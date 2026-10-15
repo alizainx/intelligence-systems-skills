@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+import subprocess, tempfile
+from pathlib import Path
+CODE = '#include <assert.h>\n#include <stddef.h>\n#include <stdint.h>\n#include <stdio.h>\n#include <stdbool.h>\n\n/* Explicit Multi-Architecture Kernel Target Descriptor (x86_64, AArch64, RISC-V RV64) */\ntypedef enum {\n    ARCH_X86_64 = 1,\n    ARCH_AARCH64 = 2,\n    ARCH_RISCV64 = 3\n} kernel_arch_t;\n\ntypedef struct {\n    kernel_arch_t arch;\n    const char *abi_name;\n    const char *kernel_privilege_mode;\n    uint32_t page_shift;\n    bool requires_no_red_zone;\n} arch_contract_t;\n\nstatic arch_contract_t get_kernel_arch_contract(kernel_arch_t arch) {\n    switch (arch) {\n        case ARCH_X86_64:\n            return (arch_contract_t){ARCH_X86_64, "SysV-AMD64-Freestanding", "Ring-0", 12U, true};\n        case ARCH_AARCH64:\n            return (arch_contract_t){ARCH_AARCH64, "AAPCS64-GeneralRegsOnly", "EL1", 12U, false};\n        case ARCH_RISCV64:\n            return (arch_contract_t){ARCH_RISCV64, "LP64-Medany", "S-mode", 12U, false};\n        default:\n            return (arch_contract_t){0};\n    }\n}\n\nint main(void) {\n    arch_contract_t x86 = get_kernel_arch_contract(ARCH_X86_64);\n    arch_contract_t arm = get_kernel_arch_contract(ARCH_AARCH64);\n    arch_contract_t rv  = get_kernel_arch_contract(ARCH_RISCV64);\n    assert(x86.requires_no_red_zone == true && x86.page_shift == 12U);\n    assert(arm.page_shift == 12U && rv.page_shift == 12U);\n    puts("MULTI-ARCH FREESTANDING KERNEL CONTRACT (x86_64 / AArch64 / RISC-V) VERIFIED");\n    return 0;\n}\n'
+with tempfile.TemporaryDirectory() as tmp:
+    p = Path(tmp) / "karch.c"
+    p.write_text(CODE)
+    subprocess.run(["gcc", "-std=c11", "-O2", "-mno-red-zone", "-Wall", "-Wextra", "-Werror", "-Wconversion", "-fanalyzer", "-fsanitize=address,undefined", str(p), "-o", str(p.with_suffix(""))], check=True)
+    subprocess.run([str(p.with_suffix(""))], check=True)

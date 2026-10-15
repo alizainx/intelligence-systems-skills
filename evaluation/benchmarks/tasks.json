@@ -1,0 +1,136 @@
+{
+  "tasks": [
+    {
+      "task_id": "BENCH-01-C11-ARENA",
+      "title": "ISO C11 Checked Aligned Arena Allocator",
+      "domain": "systems-programming",
+      "query": "Implement an ISO C11 bump arena allocator with overflow-checked power-of-two alignment and ASan/UBSan verification.",
+      "expected_skills": [
+        "c-systems-engineering",
+        "kernel-security-and-sandboxing"
+      ],
+      "verification_skill": "systems-programming/c-systems-engineering"
+    },
+    {
+      "task_id": "BENCH-02-ASM-SYSV",
+      "title": "Native x86_64 System V ABI Assembly Dot Product",
+      "domain": "systems-programming",
+      "query": "Implement a native x86_64 assembly dot product routine obeying the System V AMD64 ABI and verify linkage from C11.",
+      "expected_skills": [
+        "x86-64-and-arm-assembly",
+        "c-systems-engineering"
+      ],
+      "verification_skill": "systems-programming/x86-64-and-arm-assembly"
+    },
+    {
+      "task_id": "BENCH-03-WASM-HDL",
+      "title": "Native WebAssembly Binary Instantiation & HDL CDC Verification",
+      "domain": "programming-languages",
+      "query": "Construct and instantiate a binary WebAssembly module in Node.js V8 and verify SystemVerilog clock-domain crossing invariants.",
+      "expected_skills": [
+        "hdl-and-low-level-ir-languages",
+        "javascript-typescript-runtime"
+      ],
+      "verification_skill": "programming-languages/hdl-and-low-level-ir-languages"
+    },
+    {
+      "task_id": "BENCH-04-SQL-ACID",
+      "title": "SQLite3 ACID Transaction & Parameterized Injection Defense",
+      "domain": "programming-languages",
+      "query": "Implement an ACID SQLite3 ledger transfer with parameterized queries preventing SQL injection and verify index usage via EXPLAIN QUERY PLAN.",
+      "expected_skills": [
+        "sql-and-relational-database-engineering",
+        "python-production-engineering"
+      ],
+      "verification_skill": "programming-languages/sql-and-relational-database-engineering"
+    },
+    {
+      "task_id": "BENCH-05-OS-VMM-COW",
+      "title": "OS Virtual Memory Copy-on-Write (CoW) Page Fault Handler",
+      "domain": "operating-systems",
+      "query": "Implement an operating system virtual memory Copy-on-Write page-fault handler with physical frame reference counting and TLB shootdown tracking.",
+      "expected_skills": [
+        "os-memory-management-vmm-slab-cow",
+        "os-architecture-and-capability-models"
+      ],
+      "verification_skill": "operating-systems/os-memory-management-vmm-slab-cow"
+    },
+    {
+      "task_id": "BENCH-06-OS-VFS-WAL",
+      "title": "OS Write-Ahead Journaling Filesystem Crash Recovery",
+      "domain": "operating-systems",
+      "query": "Implement a filesystem write-ahead log (WAL) replay engine that prevents torn writes and guarantees idempotent crash recovery.",
+      "expected_skills": [
+        "os-vfs-journaling-and-cow-filesystems",
+        "os-memory-management-vmm-slab-cow"
+      ],
+      "verification_skill": "operating-systems/os-vfs-journaling-and-cow-filesystems"
+    },
+    {
+      "task_id": "BENCH-07-LINUX-EBPF",
+      "title": "Linux Kernel eBPF Packet Bounds Verifier & Module Cleanup",
+      "domain": "linux-development",
+      "query": "Implement an eBPF XDP packet parser that satisfies pointer-arithmetic verifier bounds before header access in the Linux kernel.",
+      "expected_skills": [
+        "linux-kernel-modules-ebpf-and-vfs",
+        "c-systems-engineering"
+      ],
+      "verification_skill": "linux-development/linux-kernel-modules-ebpf-and-vfs"
+    },
+    {
+      "task_id": "BENCH-08-LINUX-LFS",
+      "title": "Linux From Scratch 3-Stage Toolchain Bootstrap & ELF PT_INTERP Validator",
+      "domain": "linux-development",
+      "query": "Verify a Linux From Scratch 3-stage cross-toolchain dependency DAG and audit ELF64 PT_INTERP against host /lib64 contamination.",
+      "expected_skills": [
+        "linux-from-scratch-toolchain-bootstrap",
+        "linux-distribution-and-immutable-os"
+      ],
+      "verification_skill": "linux-development/linux-from-scratch-toolchain-bootstrap"
+    },
+    {
+      "task_id": "BENCH-09-KERNEL-SEQLOCK",
+      "title": "Kernel Interrupt-Safe Seqlock & Acquire-Release Ordering",
+      "domain": "kernel-engineering",
+      "query": "Implement an interrupt-safe kernel seqlock protocol in C11 atomics with odd-sequence spin detection and acquire-release fences.",
+      "expected_skills": [
+        "interrupt-safe-and-lockfree-kernel",
+        "multi-arch-freestanding-kernels"
+      ],
+      "verification_skill": "kernel-engineering/interrupt-safe-and-lockfree-kernel"
+    },
+    {
+      "task_id": "BENCH-10-COMPILER-HM",
+      "title": "Compiler Frontend Hindley-Milner Type Inference with Occurs-Check",
+      "domain": "compiler-engineering",
+      "query": "Implement a compiler frontend Hindley-Milner type inference engine (Algorithm W) with occurs-check rejection of infinite recursive types.",
+      "expected_skills": [
+        "compiler-frontend-lexer-parser-typechecker",
+        "language-design-and-ownership-semantics"
+      ],
+      "verification_skill": "compiler-engineering/compiler-frontend-lexer-parser-typechecker"
+    },
+    {
+      "task_id": "BENCH-11-COMPILER-ELF64",
+      "title": "Compiler Backend ELF64 Relocation & CFG Dominator Engine",
+      "domain": "compiler-engineering",
+      "query": "Implement an ELF64 R_X86_64_PC32 relocation engine with 32-bit signed displacement overflow checks and CFG dominator tree verification.",
+      "expected_skills": [
+        "compiler-backend-elf-dwarf-and-linkers",
+        "compiler-ir-ssa-and-optimizations"
+      ],
+      "verification_skill": "compiler-engineering/compiler-backend-elf-dwarf-and-linkers"
+    },
+    {
+      "task_id": "BENCH-12-PL-GC-BOOTSTRAP",
+      "title": "Tri-Color GC Dijkstra Write Barrier & Stage-2/3 Self-Hosting Verification",
+      "domain": "runtime-engineering",
+      "query": "Verify a new programming language tri-color mark-sweep garbage collector write barrier and Stage-2 == Stage-3 self-hosting compiler fixed point.",
+      "expected_skills": [
+        "runtime-gc-allocator-and-ffi-engineering",
+        "self-hosting-and-compiler-bootstrapping"
+      ],
+      "verification_skill": "runtime-engineering/runtime-gc-allocator-and-ffi-engineering"
+    }
+  ]
+}

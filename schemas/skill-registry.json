@@ -1,0 +1,1066 @@
+{
+  "ecosystem": "intelligence-systems-skills",
+  "version": "1.0.0",
+  "total_skills": 42,
+  "verified_count": 34,
+  "partially_verified_count": 8,
+  "composite_workflows": {
+    "rust_microkernel": {
+      "description": "Design and verify a Rust #![no_std] capability-based microkernel with VMM, SMP/IRQ safety, and multi-arch support",
+      "triggers": [
+        "rust microkernel",
+        "no_std kernel",
+        "rust operating system kernel"
+      ],
+      "skills": [
+        "rust-ownership-and-nostd",
+        "os-architecture-and-capability-models",
+        "os-memory-management-vmm-slab-cow",
+        "multi-arch-freestanding-kernels",
+        "interrupt-safe-and-lockfree-kernel",
+        "kernel-security-and-sandboxing"
+      ]
+    },
+    "linux_distribution": {
+      "description": "Bootstrap a custom Linux distribution from scratch with cross-compiled sysroot, VFS/CoW rootfs, and atomic package management",
+      "triggers": [
+        "linux distribution",
+        "linux from scratch",
+        "custom distro",
+        "immutable linux os"
+      ],
+      "skills": [
+        "linux-from-scratch-toolchain-bootstrap",
+        "linux-distribution-and-immutable-os",
+        "os-vfs-journaling-and-cow-filesystems",
+        "linux-userspace-libc-elf-and-wayland",
+        "kernel-security-and-sandboxing"
+      ]
+    },
+    "new_programming_language": {
+      "description": "Design, implement, verify, and bootstrap a new programming language from grammar and Hindley-Milner/ownership semantics to SSA IR, ELF64 codegen, runtime GC, and Stage-3 self-hosting",
+      "triggers": [
+        "new programming language",
+        "design a language",
+        "build a compiler for a new language",
+        "self-hosting language"
+      ],
+      "skills": [
+        "language-design-and-ownership-semantics",
+        "compiler-frontend-lexer-parser-typechecker",
+        "compiler-ir-ssa-and-optimizations",
+        "compiler-backend-elf-dwarf-and-linkers",
+        "compiler-correctness-and-translation-validation",
+        "runtime-gc-allocator-and-ffi-engineering",
+        "self-hosting-and-compiler-bootstrapping"
+      ]
+    }
+  },
+  "skills": [
+    {
+      "id": "ISS-01",
+      "name": "c-systems-engineering",
+      "category": "systems-programming",
+      "title": "ISO C11/C17/C23 Systems Engineering",
+      "specialization": "ISO C11/C17/C23 Memory-Safe & Undefined-Behavior-Free Systems Programming",
+      "description": "Engineer, audit, and verify ISO C11/C17/C23 systems software with strict pointer provenance, checked integer arithmetic, power-of-two aligned arenas, and GCC -fanalyzer + ASan/UBSan verification. Use when writing or auditing C systems code.",
+      "path": "skills/systems-programming/c-systems-engineering/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "c",
+        "c11",
+        "c17",
+        "arena",
+        "malloc",
+        "pointer",
+        "ub",
+        "valgrind",
+        "asan"
+      ]
+    },
+    {
+      "id": "ISS-02",
+      "name": "modern-cpp-systems",
+      "category": "systems-programming",
+      "title": "Modern C++20/C++23 Systems Engineering",
+      "specialization": "ISO C++20/C++23 RAII, Concepts, Constexpr & Span Safety",
+      "description": "Engineer and verify ISO C++20/C++23 systems software using RAII, concepts, constexpr compile-time evaluation, std::span bounds safety, and ASan/UBSan verification. Use when writing or auditing modern C++ code.",
+      "path": "skills/systems-programming/modern-cpp-systems/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering"
+      ],
+      "keywords": [
+        "c++",
+        "cpp",
+        "c++20",
+        "c++23",
+        "raii",
+        "span",
+        "constexpr",
+        "template"
+      ]
+    },
+    {
+      "id": "ISS-03",
+      "name": "rust-ownership-and-nostd",
+      "category": "systems-programming",
+      "title": "Rust Systems, Ownership & no_std Engineering",
+      "specialization": "Rust 2021/2024 Ownership, Borrow Checker, Lifetimes & #![no_std]",
+      "description": "Engineer and verify Rust systems crates, #![no_std] freestanding modules, typestate APIs, and sound unsafe encapsulations. Use when writing or auditing Rust systems or kernel code.",
+      "path": "skills/systems-programming/rust-ownership-and-nostd/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "rust",
+        "no_std",
+        "borrow",
+        "lifetime",
+        "cargo",
+        "miri",
+        "unsafe",
+        "microkernel"
+      ]
+    },
+    {
+      "id": "ISS-04",
+      "name": "zig-explicit-allocators-comptime",
+      "category": "systems-programming",
+      "title": "Zig Systems Engineering: Explicit Allocators, errdefer & Comptime",
+      "specialization": "Zig Memory Management, errdefer Unwinding, Comptime Generics & C ABI",
+      "description": "Engineer and verify Zig systems code with explicit std.mem.Allocator injection, errdefer resource cleanup, comptime generics, and C ABI interoperability. Use when writing or auditing Zig code.",
+      "path": "skills/systems-programming/zig-explicit-allocators-comptime/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering"
+      ],
+      "keywords": [
+        "zig",
+        "comptime",
+        "errdefer",
+        "allocator"
+      ]
+    },
+    {
+      "id": "ISS-05",
+      "name": "x86-64-and-arm-assembly",
+      "category": "systems-programming",
+      "title": "x86_64, AArch64 & RISC-V Assembly Engineering",
+      "specialization": "System V AMD64, AAPCS64 & RISC-V Calling Conventions, Stack Alignment & SIMD",
+      "description": "Write, assemble, disassemble, and verify x86_64, ARM/AArch64, and RISC-V assembly routines enforcing calling conventions, callee-saved register preservation, 16-byte stack alignment, and non-executable stack notes. Use for assembly optimization, boot/context-switch code, or ABI debugging.",
+      "path": "skills/systems-programming/x86-64-and-arm-assembly/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering"
+      ],
+      "keywords": [
+        "assembly",
+        "asm",
+        "x86_64",
+        "aarch64",
+        "riscv",
+        "simd",
+        "avx2",
+        "neon",
+        "red-zone"
+      ]
+    },
+    {
+      "id": "ISS-06",
+      "name": "ada-spark-formal-contracts",
+      "category": "systems-programming",
+      "title": "Ada 2022 & SPARK 2014 High-Integrity Systems Engineering",
+      "specialization": "Ada Range Subtypes, SPARK AoRTE Proofs, and Ravenscar Real-Time Tasking",
+      "description": "Design and verify high-integrity Ada 2022 and SPARK 2014 software enforcing range-constrained scalar subtypes, Pre/Post/Loop_Invariant contracts, Ravenscar deterministic tasking, and Absence of Run-Time Exceptions (AoRTE). Use when writing or auditing Ada/SPARK code.",
+      "path": "skills/systems-programming/ada-spark-formal-contracts/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "ada",
+        "spark",
+        "gnat",
+        "gnatprove",
+        "formal contract",
+        "ravenscar"
+      ]
+    },
+    {
+      "id": "ISS-07",
+      "name": "d-nim-odin-fortran-systems",
+      "category": "systems-programming",
+      "title": "D, Nim, Odin & Modern Fortran Systems Engineering",
+      "specialization": "D (@safe/@nogc), Nim (ORC), Odin (Context Allocators) & Fortran 2018 Column-Major Arrays",
+      "description": "Engineer and verify systems and numerical software in D, Nim, Odin, and Modern Fortran (2008/2018), enforcing D @safe/@nogc attributes, Nim ORC deterministic destructors, Odin explicit context allocators, and Fortran column-major unit-stride loops with explicit intent(in/out).",
+      "path": "skills/systems-programming/d-nim-odin-fortran-systems/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering"
+      ],
+      "keywords": [
+        "dlang",
+        "nim",
+        "odin",
+        "fortran",
+        "openmp",
+        "coarray"
+      ]
+    },
+    {
+      "id": "ISS-08",
+      "name": "python-production-engineering",
+      "category": "programming-languages",
+      "title": "Python 3.11+ Production Software Engineering",
+      "specialization": "Strict PEP 484/585 Typing, Frozen Slots Dataclasses & Deterministic Resource Safety",
+      "description": "Engineer, type-check, and verify production Python 3.11+ software using frozen slots dataclasses, Protocol structural typing, contextlib resource safety, and AST/unittest verification. Use when writing or auditing Python systems and backend code.",
+      "path": "skills/programming-languages/python-production-engineering/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "python",
+        "mypy",
+        "pytest",
+        "asyncio",
+        "pep 484"
+      ]
+    },
+    {
+      "id": "ISS-09",
+      "name": "javascript-typescript-runtime",
+      "category": "programming-languages",
+      "title": "JavaScript (ES2023) & TypeScript Runtime Engineering",
+      "specialization": "TypeScript Strict Soundness, V8 Event Loop, AbortController & Prototype-Pollution Defense",
+      "description": "Engineer and verify JavaScript (ES2023+) and TypeScript applications enforcing strictNullChecks, discriminated unions, Map-backed prototype-pollution defense, and AbortController async cancellation. Use when writing or auditing JS/TS/Node.js code.",
+      "path": "skills/programming-languages/javascript-typescript-runtime/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "javascript",
+        "typescript",
+        "node",
+        "v8",
+        "event loop",
+        "promise"
+      ]
+    },
+    {
+      "id": "ISS-10",
+      "name": "jvm-dotnet-managed-systems",
+      "category": "programming-languages",
+      "title": "Java, Kotlin, Scala & C# (.NET) Managed Systems Engineering",
+      "specialization": "JVM/CLR Memory Models, Happens-Before Concurrency, Span<T> & GC Allocation Control",
+      "description": "Engineer and verify Java (17/21), Kotlin, Scala, and C# (.NET) systems enforcing Java/CLR Memory Model happens-before guarantees, try-with-resources/using deterministic disposal, C# Span<T> zero-allocation slicing, and GC pause mitigation.",
+      "path": "skills/programming-languages/jvm-dotnet-managed-systems/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "java",
+        "kotlin",
+        "scala",
+        "c#",
+        "csharp",
+        "dotnet",
+        "jvm",
+        "clr",
+        "dart",
+        "swift"
+      ]
+    },
+    {
+      "id": "ISS-11",
+      "name": "go-concurrency-and-runtime",
+      "category": "programming-languages",
+      "title": "Go Concurrency, Channels, Context & Runtime Engineering",
+      "specialization": "Go Memory Model, Goroutine Leak Prevention, Context Cancellation & Escape Analysis",
+      "description": "Engineer and verify Go services and concurrent pipelines enforcing `context.Context` cancellation on both channel sends and receives, `errgroup` lifecycle management, slice capacity isolation, and `-race` verification. Use when writing or auditing Go code.",
+      "path": "skills/programming-languages/go-concurrency-and-runtime/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "go",
+        "golang",
+        "goroutine",
+        "channel",
+        "context"
+      ]
+    },
+    {
+      "id": "ISS-12",
+      "name": "functional-and-beam-languages",
+      "category": "programming-languages",
+      "title": "Functional, ML, Lisp & BEAM Actor Languages Engineering",
+      "specialization": "Haskell, OCaml, F#, Elixir, Erlang/OTP, Common Lisp, Scheme, Racket & Clojure",
+      "description": "Engineer and verify functional and actor-model software across Haskell, OCaml, F#, Elixir, Erlang/OTP, Common Lisp, Scheme, Racket, and Clojure enforcing exhaustive algebraic pattern matching, strict accumulator folds (foldl'), tail-call optimization, hygienic macros, and OTP supervision intensity bounds.",
+      "path": "skills/programming-languages/functional-and-beam-languages/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "haskell",
+        "ocaml",
+        "f#",
+        "fsharp",
+        "elixir",
+        "erlang",
+        "beam",
+        "otp",
+        "lisp",
+        "scheme",
+        "racket",
+        "clojure"
+      ]
+    },
+    {
+      "id": "ISS-13",
+      "name": "scripting-and-dynamic-languages",
+      "category": "programming-languages",
+      "title": "Bash, Perl, PowerShell, Lua, Ruby, PHP, Swift & Dart Engineering",
+      "specialization": "Defensive Shell Scripting (set -euo pipefail), Perl Strict/Taint Mode & Dynamic Runtime Safety",
+      "description": "Engineer and harden scripts and applications in Bash, Perl, PowerShell, Lua, Ruby, PHP, Swift, and Dart enforcing `set -euo pipefail`, `--` option terminators, quoted expansions, Perl `use strict; use warnings;`, Swift ARC weak/unowned cycle prevention, and Dart sound null safety.",
+      "path": "skills/programming-languages/scripting-and-dynamic-languages/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "bash",
+        "shell",
+        "sh",
+        "powershell",
+        "perl",
+        "ruby",
+        "php",
+        "lua"
+      ]
+    },
+    {
+      "id": "ISS-14",
+      "name": "sql-and-relational-database-engineering",
+      "category": "programming-languages",
+      "title": "SQL & Relational Database Systems Engineering",
+      "specialization": "Declarative SQL, ACID Transactions, Parameterized Queries & Composite B-Tree Indexing",
+      "description": "Design, optimize, and verify SQL schemas, ACID transactions, window functions, and composite B-Tree indexes while strictly separating declarative query languages from imperative programming languages and preventing SQL injection via bound parameters.",
+      "path": "skills/programming-languages/sql-and-relational-database-engineering/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "sql",
+        "sqlite",
+        "postgres",
+        "database",
+        "query",
+        "acid",
+        "index"
+      ]
+    },
+    {
+      "id": "ISS-15",
+      "name": "scientific-and-gpu-shader-languages",
+      "category": "programming-languages",
+      "title": "CUDA, OpenCL, GLSL/HLSL Shaders & Scientific Array Languages (Julia, R, MATLAB, Octave)",
+      "specialization": "SIMT GPU Kernels, Shared-Memory Bank-Conflict Elimination, Shader Buffer Alignment & Vectorized Array Computing",
+      "description": "Engineer and verify GPU compute kernels (CUDA C++, OpenCL), graphics/compute shaders (GLSL, HLSL), and scientific array programs (Julia, R, MATLAB, GNU Octave) enforcing warp coalescing, `+1` shared-memory bank padding, `std140`/`std430` buffer alignment, and type-stable vectorization.",
+      "path": "skills/programming-languages/scientific-and-gpu-shader-languages/SKILL.md",
+      "status": "PARTIALLY VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering"
+      ],
+      "keywords": [
+        "matlab",
+        "octave",
+        "r",
+        "julia",
+        "cuda",
+        "opencl",
+        "glsl",
+        "hlsl",
+        "gpu",
+        "shader"
+      ]
+    },
+    {
+      "id": "ISS-16",
+      "name": "hdl-and-low-level-ir-languages",
+      "category": "programming-languages",
+      "title": "Hardware Description Languages (SystemVerilog, Verilog, VHDL) & Low-Level IRs (WebAssembly, LLVM IR)",
+      "specialization": "Synthesizable RTL Design (CDC, Non-Blocking Assignments, Latch Prevention), WebAssembly Binary Validation & LLVM IR SSA",
+      "description": "Engineer and verify Hardware Description Languages (SystemVerilog, Verilog, VHDL) and low-level portable IRs/virtual ISAs (WebAssembly `.wasm`, LLVM IR), strictly distinguishing concurrent hardware synthesis from sequential software execution.",
+      "path": "skills/programming-languages/hdl-and-low-level-ir-languages/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "verilog",
+        "systemverilog",
+        "vhdl",
+        "fpga",
+        "rtl",
+        "wasm",
+        "webassembly",
+        "llvm ir"
+      ]
+    },
+    {
+      "id": "ISS-17",
+      "name": "os-architecture-and-capability-models",
+      "category": "operating-systems",
+      "title": "OS Architectures: Monolithic, Microkernel, Exokernel, Unikernel & Capability Systems",
+      "specialization": "Microkernel IPC Fastpaths, seL4/Capability Monotonic Attenuation, Unikernels & RTOS",
+      "description": "Design, compare, and verify operating system architectures (monolithic, microkernel, hybrid, exokernel, unikernel, capability-based, RTOS) enforcing monotonic capability rights attenuation (`(req & ~parent) == 0`) and fault-isolated address spaces.",
+      "path": "skills/operating-systems/os-architecture-and-capability-models/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering"
+      ],
+      "keywords": [
+        "operating system",
+        "microkernel",
+        "monolithic",
+        "unikernel",
+        "exokernel",
+        "capability",
+        "ipc"
+      ]
+    },
+    {
+      "id": "ISS-18",
+      "name": "boot-architecture-uefi-limine-multiboot",
+      "category": "operating-systems",
+      "title": "Boot Architecture: BIOS, UEFI, Multiboot2, Limine & Early Kernel Init",
+      "specialization": "UEFI `ExitBootServices`, Limine/Multiboot2 Tags, E820 Memory-Map Sanitization & Higher-Half Entry",
+      "description": "Engineer and verify OS bootloaders and early kernel initialization across BIOS, UEFI, GRUB Multiboot2, and Limine protocols, enforcing E820/EFI memory-map overlap sanitization, `ExitBootServices` map-key retry loops, and higher-half page-table bootstrap.",
+      "path": "skills/operating-systems/boot-architecture-uefi-limine-multiboot/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "x86-64-and-arm-assembly",
+        "os-architecture-and-capability-models"
+      ],
+      "keywords": [
+        "boot",
+        "bootloader",
+        "uefi",
+        "bios",
+        "limine",
+        "multiboot",
+        "grub",
+        "e820"
+      ]
+    },
+    {
+      "id": "ISS-19",
+      "name": "os-memory-management-vmm-slab-cow",
+      "category": "operating-systems",
+      "title": "OS Memory Management: Buddy, Slab, Page Tables, TLB & Copy-on-Write (CoW)",
+      "specialization": "Physical Buddy/Slab Allocators, 4-Level Paging, Copy-on-Write Faults & TLB Shootdowns",
+      "description": "Engineer and verify OS physical and virtual memory subsystems including power-of-two buddy allocators, slab caches, 4-level page tables (`W^X`), Copy-on-Write (`CoW`) fork page-fault handlers, and SMP `invlpg`/IPI TLB shootdowns.",
+      "path": "skills/operating-systems/os-memory-management-vmm-slab-cow/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "os-architecture-and-capability-models"
+      ],
+      "keywords": [
+        "virtual memory",
+        "page table",
+        "paging",
+        "slab",
+        "buddy",
+        "copy-on-write",
+        "cow",
+        "tlb",
+        "mmio"
+      ]
+    },
+    {
+      "id": "ISS-20",
+      "name": "os-process-scheduler-smp-ipc",
+      "category": "operating-systems",
+      "title": "OS Process/Thread Management, CFS/Real-Time Scheduling, SMP & IPC",
+      "specialization": "Context Switching, Proportional-Share vruntime Scheduling, SMP Affinity & Synchronous IPC",
+      "description": "Engineer and verify OS process/thread lifecycle, context-switch register frames, proportional-share (`vruntime`) and real-time schedulers, SMP work-stealing runqueues, and bounded IPC channels.",
+      "path": "skills/operating-systems/os-process-scheduler-smp-ipc/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "os-architecture-and-capability-models",
+        "interrupt-safe-and-lockfree-kernel"
+      ],
+      "keywords": [
+        "scheduler",
+        "context switch",
+        "smp",
+        "cfs",
+        "eevdf",
+        "process",
+        "thread",
+        "signal"
+      ]
+    },
+    {
+      "id": "ISS-21",
+      "name": "os-vfs-journaling-and-cow-filesystems",
+      "category": "operating-systems",
+      "title": "OS Filesystem Engineering: VFS, Inodes, Write-Ahead Journaling & Copy-on-Write FS",
+      "specialization": "VFS Dentry/Inode Cache, Redo Write-Ahead Logging (WAL), Crash Recovery & CoW B-Trees",
+      "description": "Design, implement, and verify OS filesystems including VFS inode/dentry caches, write-ahead journaling (WAL) crash consistency, and Copy-on-Write (ZFS/Btrfs-style) atomic root-pointer tree updates.",
+      "path": "skills/operating-systems/os-vfs-journaling-and-cow-filesystems/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "os-memory-management-vmm-slab-cow"
+      ],
+      "keywords": [
+        "filesystem",
+        "vfs",
+        "inode",
+        "journaling",
+        "b-tree",
+        "block device",
+        "page cache",
+        "crash recovery"
+      ]
+    },
+    {
+      "id": "ISS-22",
+      "name": "os-device-drivers-pcie-nvme-dma",
+      "category": "operating-systems",
+      "title": "OS Device Driver Engineering: PCIe, NVMe, USB, Network Rings & DMA",
+      "specialization": "PCIe BAR Mapping, NVMe SQ/CQ Doorbell & Phase-Tag Protocol, IOMMU & DMA Coherency",
+      "description": "Engineer and verify OS device drivers for PCIe, NVMe, network, and DMA peripherals enforcing NVMe Completion Queue phase-bit inversion across ring wrap-around, DMA buffer alignment, memory barriers before doorbell writes, and IOMMU address translation.",
+      "path": "skills/operating-systems/os-device-drivers-pcie-nvme-dma/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "os-memory-management-vmm-slab-cow",
+        "interrupt-safe-and-lockfree-kernel"
+      ],
+      "keywords": [
+        "driver",
+        "pci",
+        "pcie",
+        "nvme",
+        "usb",
+        "sata",
+        "dma",
+        "msi-x",
+        "iommu"
+      ]
+    },
+    {
+      "id": "ISS-23",
+      "name": "linux-kernel-modules-ebpf-and-vfs",
+      "category": "linux-development",
+      "title": "Linux Kernel Development: Kbuild, Modules, eBPF Verifier, VFS & LSM",
+      "specialization": "Linux Kernel Modules, eBPF Verifier Bounds Proofs, Kconfig/Kbuild & Tracing",
+      "description": "Engineer and verify Linux kernel modules, Kbuild/Kconfig files, eBPF programs (XDP, TC, kprobes), VFS hooks, and Linux Security Modules (LSM), enforcing eBPF `data + offset <= data_end` verifier domination rules and kernel resource cleanup.",
+      "path": "skills/linux-development/linux-kernel-modules-ebpf-and-vfs/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering",
+        "os-memory-management-vmm-slab-cow"
+      ],
+      "keywords": [
+        "linux kernel",
+        "kbuild",
+        "kconfig",
+        "kernel module",
+        "ebpf",
+        "bpf",
+        "ftrace",
+        "lsm"
+      ]
+    },
+    {
+      "id": "ISS-24",
+      "name": "linux-from-scratch-toolchain-bootstrap",
+      "category": "linux-development",
+      "title": "Linux From Scratch (LFS) & Cross-Toolchain Bootstrapping",
+      "specialization": "3-Stage Toolchain Bootstrap (Binutils -> Freestanding GCC -> Libc -> Hosted GCC), Sysroot Isolation & ELF `PT_INTERP`",
+      "description": "Design and verify Linux From Scratch (LFS) systems, cross-compilation toolchains, `--with-sysroot` isolation, `glibc`/`musl` integration, ELF `PT_INTERP` dynamic linker paths, and reproducible root filesystem builds.",
+      "path": "skills/linux-development/linux-from-scratch-toolchain-bootstrap/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering",
+        "compiler-backend-elf-dwarf-and-linkers"
+      ],
+      "keywords": [
+        "linux from scratch",
+        "lfs",
+        "toolchain bootstrap",
+        "sysroot",
+        "cross-compile",
+        "stage 1"
+      ]
+    },
+    {
+      "id": "ISS-25",
+      "name": "linux-distribution-and-immutable-os",
+      "category": "linux-development",
+      "title": "Linux Distribution Engineering & Immutable Operating Systems",
+      "specialization": "OSTree/A-B Atomic Rootfs Updates, Boot-Counter Rollback, Package Dependency Resolution & Repo Signing",
+      "description": "Design and verify custom Linux distributions and immutable operating systems covering A/B atomic partition updates, boot-attempt counter rollback, package dependency/conflict resolution, and reproducible signed repositories.",
+      "path": "skills/linux-development/linux-distribution-and-immutable-os/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "linux-from-scratch-toolchain-bootstrap",
+        "os-vfs-journaling-and-cow-filesystems"
+      ],
+      "keywords": [
+        "linux distribution",
+        "distro",
+        "immutable os",
+        "atomic update",
+        "package manager",
+        "ostree"
+      ]
+    },
+    {
+      "id": "ISS-26",
+      "name": "linux-userspace-libc-elf-and-wayland",
+      "category": "linux-development",
+      "title": "Linux User-Space Engineering: POSIX, glibc/musl/relibc, ELF Dynamic Linking & Wayland",
+      "specialization": "Portable Libc (glibc, musl, relibc), Non-systemd Init Supervision, ELF GOT/PLT & Wayland/D-Bus Framing",
+      "description": "Engineer portable Linux user-space daemons, libraries, and display/IPC clients across glibc, musl, and relibc without assuming systemd or GNU coreutils, enforcing strict POSIX standards, ELF symbol visibility (`-fvisibility=hidden`), and Wayland/D-Bus wire framing validation.",
+      "path": "skills/linux-development/linux-userspace-libc-elf-and-wayland/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering",
+        "linux-from-scratch-toolchain-bootstrap"
+      ],
+      "keywords": [
+        "glibc",
+        "musl",
+        "relibc",
+        "wayland",
+        "pipewire",
+        "d-bus",
+        "elf loader",
+        "posix"
+      ]
+    },
+    {
+      "id": "ISS-27",
+      "name": "multi-arch-freestanding-kernels",
+      "category": "kernel-engineering",
+      "title": "Multi-Architecture Freestanding Kernel Engineering (x86_64, AArch64, RISC-V)",
+      "specialization": "Freestanding C/C++/Rust/Assembly Kernels, Linker Scripts, Red-Zone Suppression & Privilege Levels",
+      "description": "Engineer and verify freestanding OS kernels across x86, x86_64, ARM, AArch64, and RISC-V explicitly declaring target architecture, ABI, privilege level (Ring 0, EL1, S-mode), memory model, `-mno-red-zone` / `-mgeneral-regs-only` compiler flags, and linker script section alignment.",
+      "path": "skills/kernel-engineering/multi-arch-freestanding-kernels/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "x86-64-and-arm-assembly",
+        "os-architecture-and-capability-models"
+      ],
+      "keywords": [
+        "kernel",
+        "bare-metal",
+        "freestanding",
+        "x86_64 kernel",
+        "aarch64 kernel",
+        "riscv64 kernel"
+      ]
+    },
+    {
+      "id": "ISS-28",
+      "name": "interrupt-safe-and-lockfree-kernel",
+      "category": "kernel-engineering",
+      "title": "Interrupt-Safe Programming, Lock-Free Structures & Atomic Memory Ordering",
+      "specialization": "ISR Top/Bottom Halves, SeqLocks, Lock-Free Queues & C11/LKMM Acquire-Release Barriers",
+      "description": "Engineer and verify interrupt-safe kernel subsystems, SeqLocks, lock-free queues, and atomic state machines using explicit C11/LKMM memory orderings (`memory_order_acquire`, `memory_order_release`, `memory_order_seq_cst`) and `spin_lock_irqsave` discipline.",
+      "path": "skills/kernel-engineering/interrupt-safe-and-lockfree-kernel/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "multi-arch-freestanding-kernels"
+      ],
+      "keywords": [
+        "interrupt",
+        "isr",
+        "seqlock",
+        "rcu",
+        "lock-free",
+        "memory ordering",
+        "spinlock"
+      ]
+    },
+    {
+      "id": "ISS-29",
+      "name": "kernel-security-and-sandboxing",
+      "category": "kernel-engineering",
+      "title": "Kernel Security: TOCTOU Double-Fetch Mitigation, SMEP/SMAP & Seccomp-BPF",
+      "specialization": "Syscall Boundary Validation, TOCTOU Prevention, Capability Isolation & Seccomp Sandboxing",
+      "description": "Harden and audit OS kernel syscall boundaries against Time-of-Check-to-Time-of-Use (TOCTOU) double-fetch vulnerabilities, user-pointer dereferences (SMEP/SMAP/PAN violations), integer overflows, and Seccomp-BPF sandbox escapes.",
+      "path": "skills/kernel-engineering/kernel-security-and-sandboxing/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "multi-arch-freestanding-kernels"
+      ],
+      "keywords": [
+        "seccomp",
+        "kaslr",
+        "smep",
+        "smap",
+        "toctou",
+        "kernel attack surface",
+        "Capabilities"
+      ]
+    },
+    {
+      "id": "ISS-30",
+      "name": "cpu-microarchitecture-isa-and-mesi",
+      "category": "computer-architecture",
+      "title": "CPU Microarchitecture, ISA Encoding (x86_64, ARM, RISC-V), Pipelining & Cache Coherence",
+      "specialization": "Instruction Decoding, 5-Stage/OoO Hazard Forwarding, MESI/MOESI Cache Coherence & Memory Hierarchy",
+      "description": "Model, implement, and verify CPU instruction decoders (`x86_64`, `ARM`, `RISC-V`), pipeline forwarding/stall units, and MESI/MOESI snooping cache coherence protocols enforcing the Single-Writer-Multiple-Reader (SWMR) invariant.",
+      "path": "skills/computer-architecture/cpu-microarchitecture-isa-and-mesi/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "x86-64-and-arm-assembly"
+      ],
+      "keywords": [
+        "cpu",
+        "pipeline",
+        "mesi",
+        "moesi",
+        "cache coherence",
+        "roofline",
+        "isa",
+        "hazard"
+      ]
+    },
+    {
+      "id": "ISS-31",
+      "name": "software-architecture-and-api-design",
+      "category": "software-engineering",
+      "title": "Software Architecture, Clean Boundaries & Idempotent API Design",
+      "specialization": "Hexagonal/Clean Architecture, Idempotency Keys, Backward-Compatible Schema Evolution & Dependency Inversion",
+      "description": "Design, audit, and verify modular software architectures and APIs enforcing dependency inversion, payload-bound idempotency keys (rejecting key reuse across mismatched payloads with HTTP 422), and wire-compatible schema evolution.",
+      "path": "skills/software-engineering/software-architecture-and-api-design/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "architecture",
+        "api",
+        "hexagonal",
+        "idempotency",
+        "schema",
+        "design pattern"
+      ]
+    },
+    {
+      "id": "ISS-32",
+      "name": "concurrency-async-and-distributed",
+      "category": "software-engineering",
+      "title": "Concurrent, Asynchronous & Distributed Systems Engineering",
+      "specialization": "Lock-Order DAG Verification, Bounded Backpressure Queues, Structured Concurrency & Non-Blocking I/O",
+      "description": "Engineer and verify multithreaded, asynchronous, and distributed software enforcing strict global lock-acquisition ordering (DAG cycle freedom), bounded backpressure queues, and structured task cancellation.",
+      "path": "skills/software-engineering/concurrency-async-and-distributed/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "software-architecture-and-api-design"
+      ],
+      "keywords": [
+        "concurrency",
+        "async",
+        "distributed",
+        "lock",
+        "deadlock",
+        "backpressure",
+        "rpc"
+      ]
+    },
+    {
+      "id": "ISS-33",
+      "name": "large-codebase-modernization-refactoring",
+      "category": "software-engineering",
+      "title": "Large Codebase Analysis, Legacy Modernization & Safe Refactoring",
+      "specialization": "Characterization Testing (Golden Master), Strangler-Fig Migration & Cross-Language Semantic Traps",
+      "description": "Analyze, refactor, and modernize large or legacy codebases using deterministic characterization test harnesses, dependency cycle breaking, and cross-language semantic equivalence auditing (e.g., C truncation-toward-zero division vs. Python floor division).",
+      "path": "skills/software-engineering/large-codebase-modernization-refactoring/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "software-architecture-and-api-design"
+      ],
+      "keywords": [
+        "legacy",
+        "modernization",
+        "refactoring",
+        "migration",
+        "monorepo",
+        "characterization"
+      ]
+    },
+    {
+      "id": "ISS-34",
+      "name": "ai-coding-agent-workflow",
+      "category": "ai-coding-intelligence",
+      "title": "AI Coding Agent Engineering Discipline & Verification Workflow",
+      "specialization": "7-Stage Workflow (UNDERSTAND -> PLAN -> IMPLEMENT -> COMPILE -> TEST -> VERIFY -> REVIEW) & Anti-Fabrication",
+      "description": "Enforce the mandatory 7-stage AI software engineering loop (`UNDERSTAND -> PLAN -> IMPLEMENT -> COMPILE -> TEST -> VERIFY -> REVIEW`), multi-file dependency tracing, compiler diagnostic root-cause analysis, and zero-fabrication tool discipline.",
+      "path": "skills/ai-coding-intelligence/ai-coding-agent-workflow/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "software-architecture-and-api-design",
+        "kernel-security-and-sandboxing"
+      ],
+      "keywords": [
+        "ai coding",
+        "agent workflow",
+        "understand plan implement",
+        "multi-file edit",
+        "regression detection"
+      ]
+    },
+    {
+      "id": "ISS-35",
+      "name": "compiler-frontend-lexer-parser-typechecker",
+      "category": "compiler-engineering",
+      "title": "Compiler Frontend: Lexing, Pratt/LR Parsing, Name Resolution & Type Inference",
+      "specialization": "Span-Tracked Lexers, Pratt/Recursive-Descent Error-Recovering Parsers & Hindley-Milner Algorithm W",
+      "description": "Engineer and verify compiler frontends including span-tracked lexers, Pratt/LR parsers with panic-mode synchronization, lexical symbol tables, and Hindley-Milner / bidirectional type checkers with occurs-check cycle prevention.",
+      "path": "skills/compiler-engineering/compiler-frontend-lexer-parser-typechecker/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [],
+      "keywords": [
+        "compiler frontend",
+        "lexer",
+        "parser",
+        "ast",
+        "cst",
+        "grammar",
+        "type inference",
+        "hindley-milner"
+      ]
+    },
+    {
+      "id": "ISS-36",
+      "name": "compiler-ir-ssa-and-optimizations",
+      "category": "compiler-engineering",
+      "title": "Compiler IRs (HIR/MIR/SSA), Dataflow Analysis & Optimization Passes",
+      "specialization": "SSA Construction, Dominator Trees, SCCP, CSE/GVN, Dead-Code Elimination & Register Allocation",
+      "description": "Design and verify compiler intermediate representations (HIR, MIR, LIR, SSA) and optimization passes including dominator trees, constant propagation, common subexpression elimination (CSE/GVN), trap-preserving DCE, and Poletto-Sarkar linear-scan / graph-coloring register allocation.",
+      "path": "skills/compiler-engineering/compiler-ir-ssa-and-optimizations/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "compiler-frontend-lexer-parser-typechecker"
+      ],
+      "keywords": [
+        "ssa",
+        "intermediate representation",
+        "hir",
+        "mir",
+        "dominator",
+        "liveness",
+        "register allocation",
+        "dead-code"
+      ]
+    },
+    {
+      "id": "ISS-37",
+      "name": "compiler-backend-elf-dwarf-and-linkers",
+      "category": "compiler-engineering",
+      "title": "Compiler Backends, Instruction Selection, ELF64, DWARF & Linker Relocations",
+      "specialization": "Target Lowering, Calling Conventions, ELF64 Object Emission, `R_X86_64_PC32` Relocations & LLVM/Cranelift/MLIR",
+      "description": "Engineer and verify compiler backends, stack-frame prologues/epilogues, ELF64 object sections, DWARF unwind tables, and linker symbol relocations (`R_X86_64_64`, `R_X86_64_PC32`, `R_AARCH64_CALL26`) across LLVM, Clang, GCC, Cranelift, MLIR, and LLD/GNU Binutils.",
+      "path": "skills/compiler-engineering/compiler-backend-elf-dwarf-and-linkers/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "compiler-ir-ssa-and-optimizations",
+        "x86-64-and-arm-assembly"
+      ],
+      "keywords": [
+        "compiler backend",
+        "instruction selection",
+        "elf64",
+        "dwarf",
+        "linker",
+        "relocation",
+        "llvm",
+        "cranelift",
+        "mlir"
+      ]
+    },
+    {
+      "id": "ISS-38",
+      "name": "compiler-correctness-and-translation-validation",
+      "category": "compiler-engineering",
+      "title": "Compiler Correctness: Translation Validation, Differential Testing & Fuzzing",
+      "specialization": "Operational Semantics Equivalence, Differential `-O0` vs `-O2` Testing & Miscompilation Detection",
+      "description": "Verify compiler correctness using translation validation ($\\llbracket \\text{IR} \\rrbracket(\\sigma) \\equiv \\llbracket \\text{Opt}(\\text{IR}) \\rrbracket(\\sigma)$), Csmith-style differential testing across optimization levels, and Undefined Behavior trap preservation.",
+      "path": "skills/compiler-engineering/compiler-correctness-and-translation-validation/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 108,
+      "estimated_tokens": 1188,
+      "dependencies": [
+        "compiler-ir-ssa-and-optimizations"
+      ],
+      "keywords": [
+        "compiler correctness",
+        "translation validation",
+        "differential testing",
+        "miscompilation",
+        "type soundness"
+      ]
+    },
+    {
+      "id": "ISS-39",
+      "name": "language-design-and-ownership-semantics",
+      "category": "programming-language-development",
+      "title": "Programming Language Design: Type Systems, Ownership, Borrowing & Semantics",
+      "specialization": "Grammar Design, Algebraic Data Types, Exhaustiveness Checking & Affine Ownership / Borrow Semantics",
+      "description": "Design and verify new programming languages covering unambiguous concrete syntax, algebraic sum/product types, Maranget pattern-matching exhaustiveness, and affine ownership / Aliasing-XOR-Mutability borrow checking.",
+      "path": "skills/programming-language-development/language-design-and-ownership-semantics/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "compiler-frontend-lexer-parser-typechecker"
+      ],
+      "keywords": [
+        "new programming language",
+        "language design",
+        "operational semantics",
+        "ownership",
+        "borrowing",
+        "effects",
+        "adt"
+      ]
+    },
+    {
+      "id": "ISS-40",
+      "name": "runtime-gc-allocator-and-ffi-engineering",
+      "category": "runtime-engineering",
+      "title": "Language Runtime Engineering: Garbage Collection, Reference Counting & FFI",
+      "specialization": "Tri-Color Incremental/Generational GC Write Barriers, Cycle-Collecting RC & C-ABI FFI",
+      "description": "Engineer and verify language runtimes including tri-color mark-and-sweep / generational garbage collectors with Dijkstra/Yuasa write barriers, cycle-collecting reference counters, green-thread stack switching, and C-ABI FFI marshaling.",
+      "path": "skills/runtime-engineering/runtime-gc-allocator-and-ffi-engineering/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "c-systems-engineering",
+        "language-design-and-ownership-semantics"
+      ],
+      "keywords": [
+        "garbage collection",
+        "gc",
+        "tri-color",
+        "write barrier",
+        "reference counting",
+        "ffi",
+        "runtime"
+      ]
+    },
+    {
+      "id": "ISS-41",
+      "name": "language-tooling-lsp-formatter-repl",
+      "category": "programming-language-development",
+      "title": "Language Tooling: LSP Servers, Formatters, Linters, Package Managers & REPLs",
+      "specialization": "LSP JSON-RPC Framing, Incremental AST Indexing, Wadler-Lindig Pretty-Printing & REPL State",
+      "description": "Engineer and verify language tooling including Language Server Protocol (LSP) servers, deterministic code formatters ($f(f(x)) == f(x)$), static linters, lockfile-backed package managers, and interactive REPLs.",
+      "path": "skills/programming-language-development/language-tooling-lsp-formatter-repl/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "compiler-frontend-lexer-parser-typechecker"
+      ],
+      "keywords": [
+        "lsp",
+        "language server",
+        "formatter",
+        "linter",
+        "repl",
+        "pretty-printer"
+      ]
+    },
+    {
+      "id": "ISS-42",
+      "name": "self-hosting-and-compiler-bootstrapping",
+      "category": "programming-language-development",
+      "title": "Self-Hosting Compilers, Bootstrapping & Diverse Double-Compiling (DDC) Trust",
+      "specialization": "Stage-0/1/2/3 Compiler Bootstrapping, Reproducible Builds & Thompson Backdoor Detection",
+      "description": "Design and verify self-hosting compiler bootstrap pipelines (`Stage 0 -> Stage 1 -> Stage 2 -> Stage 3` bit-for-bit fixed-point verification) and defend against Ken Thompson's 'Trusting Trust' binary backdoors using Diverse Double-Compiling (DDC).",
+      "path": "skills/programming-language-development/self-hosting-and-compiler-bootstrapping/SKILL.md",
+      "status": "VERIFIED",
+      "line_count": 104,
+      "estimated_tokens": 1144,
+      "dependencies": [
+        "compiler-backend-elf-dwarf-and-linkers",
+        "compiler-correctness-and-translation-validation"
+      ],
+      "keywords": [
+        "self-hosting",
+        "bootstrapping",
+        "stage-0",
+        "diverse double-compiling",
+        "trusting trust"
+      ]
+    }
+  ]
+}

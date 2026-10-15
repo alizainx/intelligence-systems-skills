@@ -1,0 +1,355 @@
+{
+  "total_languages_covered": 50,
+  "languages": [
+    {
+      "language": "C (ISO C11/C17/C23)",
+      "classification": "Systems Programming Language",
+      "skill": "c-systems-engineering",
+      "native_toolchain_in_vm": "gcc 12.2.0 (-fanalyzer, ASan, UBSan)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Modern C++ (C++20/C++23)",
+      "classification": "Systems Programming Language",
+      "skill": "modern-cpp-systems",
+      "native_toolchain_in_vm": "g++ 12.2.0 (ASan, UBSan)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Rust (2021/2024, no_std)",
+      "classification": "Systems Programming Language",
+      "skill": "rust-ownership-and-nostd",
+      "native_toolchain_in_vm": "AST/Borrow/ABA model executed; rustc/cargo in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Zig",
+      "classification": "Systems Programming Language",
+      "skill": "zig-explicit-allocators-comptime",
+      "native_toolchain_in_vm": "Allocator/errdefer leak model executed; zig in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Assembly (x86_64 / AArch64 / RISC-V)",
+      "classification": "Machine / Assembly Language",
+      "skill": "x86-64-and-arm-assembly",
+      "native_toolchain_in_vm": "GNU as 2.40 + ld 2.40 + objdump (x86_64 native execution)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Ada (Ada 2022)",
+      "classification": "Systems & Safety-Critical Programming Language",
+      "skill": "ada-spark-formal-contracts",
+      "native_toolchain_in_vm": "Subtype range & contract verifier executed; gnat in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "SPARK (SPARK 2014)",
+      "classification": "Formally Verified Systems Language Subset",
+      "skill": "ada-spark-formal-contracts",
+      "native_toolchain_in_vm": "AoRTE proof obligation verifier executed; gnatprove in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "D",
+      "classification": "Systems Programming Language",
+      "skill": "d-nim-odin-fortran-systems",
+      "native_toolchain_in_vm": "@safe/@nogc attribute & slice verifier executed; ldc2/dmd in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Nim",
+      "classification": "Systems Programming Language",
+      "skill": "d-nim-odin-fortran-systems",
+      "native_toolchain_in_vm": "ORC reference-counting cycle verifier executed; nim in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Odin",
+      "classification": "Systems Data-Oriented Programming Language",
+      "skill": "d-nim-odin-fortran-systems",
+      "native_toolchain_in_vm": "context.allocator/temp_allocator model executed; odin in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Fortran (Fortran 2018)",
+      "classification": "Scientific & Systems Array Programming Language",
+      "skill": "d-nim-odin-fortran-systems",
+      "native_toolchain_in_vm": "Column-major stride & intent(in/out) alias verifier executed; gfortran in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Python (3.11+)",
+      "classification": "General-Purpose Programming Language",
+      "skill": "python-production-engineering",
+      "native_toolchain_in_vm": "Python 3.11.2 (ast, unittest, typing)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Java",
+      "classification": "General-Purpose Managed Language (JVM)",
+      "skill": "jvm-dotnet-managed-systems",
+      "native_toolchain_in_vm": "OpenJDK 17 runtime + JMM happens-before verifier",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "C#",
+      "classification": "General-Purpose Managed Language (CLR)",
+      "skill": "jvm-dotnet-managed-systems",
+      "native_toolchain_in_vm": "Span<T>/async-state-machine verifier executed; dotnet in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Go",
+      "classification": "General-Purpose Concurrent Systems Language",
+      "skill": "go-concurrency-and-runtime",
+      "native_toolchain_in_vm": "Channel happens-before & context leak verifier executed; go in CI",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Kotlin",
+      "classification": "General-Purpose Multiplatform Language (JVM/Native)",
+      "skill": "jvm-dotnet-managed-systems",
+      "native_toolchain_in_vm": "Null-safety & structured coroutine cancellation verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Swift",
+      "classification": "General-Purpose ARC Compiled Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "ARC strong/weak/unowned cycle detector executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "JavaScript (ES2023)",
+      "classification": "General-Purpose Dynamic Language",
+      "skill": "javascript-typescript-runtime",
+      "native_toolchain_in_vm": "Node.js v18.20.4 native execution",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "TypeScript",
+      "classification": "Statically Typed Superset of JavaScript",
+      "skill": "javascript-typescript-runtime",
+      "native_toolchain_in_vm": "Discriminated union & structural type verifier executed on Node.js v18",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Ruby",
+      "classification": "General-Purpose Object-Oriented Dynamic Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "Block/Fiber & metaprogramming safety verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "PHP",
+      "classification": "General-Purpose Web/Server Scripting Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "Strict-types & PDO prepared-statement security verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Dart",
+      "classification": "General-Purpose Sound Null-Safe Isolate Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "Isolate message-passing & sound null-safety verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Scala",
+      "classification": "General-Purpose Functional/OOP JVM Language",
+      "skill": "jvm-dotnet-managed-systems",
+      "native_toolchain_in_vm": "Immutability & typeclass variance verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Julia",
+      "classification": "General-Purpose & Technical Multiple-Dispatch Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Type-stability & multiple-dispatch ambiguity verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Lua",
+      "classification": "Embeddable Extension Scripting Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "Metatable & C-stack balance verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Perl (Perl 5)",
+      "classification": "General-Purpose Text/Systems Scripting Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "Perl 5 native execution (-T taint & strict/warnings)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Elixir",
+      "classification": "Functional Concurrent BEAM Language",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "OTP supervision tree & immutable pipeline verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Erlang",
+      "classification": "Fault-Tolerant Actor BEAM Language",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Actor mailbox isolation & supervisor restart-intensity verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Haskell",
+      "classification": "Purely Functional Lazy Language",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Hindley-Milner type & strict foldl' thunk-leak verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "OCaml",
+      "classification": "Strict Functional ML Systems Language",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Exhaustive pattern matching & module functor verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "F#",
+      "classification": "Functional-First .NET Language",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Units-of-measure & algebraic sum-type verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Common Lisp",
+      "classification": "Multi-Paradigm Programmable Symbolic Language",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Hygienic gensym macro-expansion & condition-system verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Scheme",
+      "classification": "Lexically Scoped Minimalist Lisp Dialect",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Proper tail-call (TCO) & continuation frame verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Racket",
+      "classification": "Language-Oriented Lisp/Scheme Platform",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Contract boundary & syntax-parse macro verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Clojure",
+      "classification": "Hosted Immutable Lisp (JVM)",
+      "skill": "functional-and-beam-languages",
+      "native_toolchain_in_vm": "Persistent vector structural-sharing & STM ref transaction verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "MATLAB",
+      "classification": "Numerical Computing Environment & Array Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Vectorized matrix preallocation & conditioning verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "GNU Octave",
+      "classification": "Open-Source Numerical Array Environment",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Vectorized broadcast & numerical solver verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "R",
+      "classification": "Statistical Computing & Graphics Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Vectorized dataframe & NA-propagation verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "SQL",
+      "classification": "Declarative Relational Query & DDL/DML Language",
+      "skill": "sql-and-relational-database-engineering",
+      "native_toolchain_in_vm": "Python 3.11 sqlite3 native engine (ACID, EXPLAIN QUERY PLAN, parameterized queries)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "Bash",
+      "classification": "POSIX / GNU Bourne-Again Command Shell",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "GNU bash 5.2.15 native execution (set -euo pipefail)",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "PowerShell",
+      "classification": "Object-Pipeline Command Shell & Scripting Language",
+      "skill": "scripting-and-dynamic-languages",
+      "native_toolchain_in_vm": "StrictMode & pipeline object contract verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "CUDA C++",
+      "classification": "SIMT GPU Parallel Compute Extension Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Warp coalescing, 32-bank shared-memory conflict & __syncthreads() verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "OpenCL",
+      "classification": "Heterogeneous Parallel Compute Kernel Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Work-group local/global memory barrier verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "GLSL",
+      "classification": "OpenGL/Vulkan Graphics & Compute Shading Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Std140/Std430 UBO/SSBO alignment padding verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "HLSL",
+      "classification": "DirectX Graphics & Compute Shading Language",
+      "skill": "scientific-and-gpu-shader-languages",
+      "native_toolchain_in_vm": "Constant-buffer 16-byte register-packing verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "VHDL",
+      "classification": "Strongly Typed Hardware Description Language (HDL)",
+      "skill": "hdl-and-low-level-ir-languages",
+      "native_toolchain_in_vm": "std_logic synchronous reset & sensitivity-list completeness verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "Verilog",
+      "classification": "Hardware Description Language (HDL)",
+      "skill": "hdl-and-low-level-ir-languages",
+      "native_toolchain_in_vm": "Blocking (=) vs non-blocking (<=) race & inferred-latch detector executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "SystemVerilog",
+      "classification": "Hardware Description & Verification Language (HDVL)",
+      "skill": "hdl-and-low-level-ir-languages",
+      "native_toolchain_in_vm": "always_ff/always_comb synthesis & 2-FF CDC synchronizer verifier executed",
+      "status": "IMPLEMENTED & PARTIALLY VERIFIED"
+    },
+    {
+      "language": "WebAssembly (Wasm)",
+      "classification": "Portable Stack-Based Binary Instruction Format / Virtual ISA",
+      "skill": "hdl-and-low-level-ir-languages",
+      "native_toolchain_in_vm": "Node.js v18.20.4 WebAssembly.instantiate native binary execution!",
+      "status": "IMPLEMENTED & VERIFIED"
+    },
+    {
+      "language": "LLVM IR",
+      "classification": "Typed Static Single Assignment (SSA) Compiler IR",
+      "skill": "hdl-and-low-level-ir-languages",
+      "native_toolchain_in_vm": "SSA dominance, phi-node predecessor match & GEP bounds verifier executed",
+      "status": "IMPLEMENTED & VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IntelligenceSystemsValidationReport",
+  "type": "object",
+  "required": [
+    "skill",
+    "status",
+    "structural_valid",
+    "test_exit_code"
+  ],
+  "properties": {
+    "skill": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "PARTIALLY VERIFIED",
+        "PLANNED",
+        "NOT EXECUTED",
+        "FAILED"
+      ]
+    },
+    "structural_valid": {
+      "type": "boolean"
+    },
+    "test_exit_code": {
+      "type": "integer"
+    }
+  }
+}
